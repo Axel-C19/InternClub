@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db"); // Conexión a MongoDB desde db.js
-const authRoutes = require("./routes/auth"); // Importamos las rutas de autenticación
+const Routes = require("./routes/routes"); // Importamos las rutas de autenticación
 require("dotenv").config();
 
 const app = express();
@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Rutas
-app.use("/api", authRoutes); // Agregamos las rutas de autenticación
+app.use("/api", Routes); // Agregamos las rutas de autenticación
 
 // Iniciar el servidor
 app.listen(PORT, () => {
